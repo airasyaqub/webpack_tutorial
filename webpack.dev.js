@@ -9,7 +9,7 @@ module.exports = merge(common, {
     port: 8080
   },
   output: {
-    filename: "main.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: ''
   }
