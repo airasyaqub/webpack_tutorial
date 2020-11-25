@@ -1,5 +1,5 @@
 import { run } from "./app/app";
-import ("lodash");
+import "lodash";
 import "bootstrap";
 import "./main.scss";
 import { AlertService } from "./app/alert.service";
