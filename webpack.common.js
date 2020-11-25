@@ -42,7 +42,7 @@ module.exports = {
   ],
   optimization: {
     /*https://github.com/webpack/webpack/issues/10908*/
-    // minimize: false,
+    minimize: false,
 
     splitChunks: {
       /*https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0 to understand below property */
