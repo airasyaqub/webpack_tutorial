@@ -5,7 +5,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 module.exports = {
   entry: {
     a: './src/a.js',
-    // b: './src/b.js',
+    b: './src/b.js',
     // c: './src/c.js'
   },
   module: {
@@ -42,15 +42,20 @@ module.exports = {
   ],
   optimization: {
     /*https://github.com/webpack/webpack/issues/10908*/
-    minimize: false,
+    // minimize: false,
 
     splitChunks: {
+
       /*https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0 to understand below property */
       chunks: 'async',
+
       /* Minimum size, in bytes, of a file to start splitting of that file and generate a chunk. Please note that minSize is calculated from the unminimized source code size */
-      minSize: 2000000,
+      minSize: 30000,
+
       // minRemainingSize: 0,
+
       // maxSize: 10000,
+
       /*https://medium.com/jspoint/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312 to understand below property */
       // minChunks: 2,
       // maxAsyncRequests: 30,
