@@ -46,7 +46,7 @@ module.exports = {
 
     splitChunks: {
       /*https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0 to understand below property */
-      chunks: 'initial',
+      chunks: 'async',
       /* Minimum size, in bytes, of a file to start splitting of that file and generate a chunk. Please note that minSize is calculated from the unminimized source code size */
       minSize: 2000000,
       // minRemainingSize: 0,
