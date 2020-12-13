@@ -42,12 +42,13 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      cacheGroups: {
-        vendor: {
-          chunks: 'initial',
-          test: /node_modules/,
-        }
-      }
+      chunks: 'async',
+      // cacheGroups: {
+      //   vendor: {
+      //     chunks: 'initial',
+      //     test: /node_modules/,
+      //   }
+      // }
     }
   }
   // optimization: {
