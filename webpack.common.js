@@ -42,7 +42,12 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      chunks: 'initial',
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          test: /node_modules/,
+        }
+      }
     }
   }
   // optimization: {
