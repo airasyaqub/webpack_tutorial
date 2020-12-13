@@ -47,6 +47,12 @@ module.exports = {
         vendor: {
           chunks: 'all',
           test: /node_modules/,
+        },
+        default: {
+          chunks: 'all',
+          minChunks: 2,
+          // priority: -20,
+          // reuseExistingChunk: true
         }
       }
     }
