@@ -1,3 +1,5 @@
+import ("../main.scss");
+
 export class ComponentService {
   constructor() {
     this.numberOneInput = document.getElementById("numberOne");

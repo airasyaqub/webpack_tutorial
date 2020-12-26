@@ -5,7 +5,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 module.exports = {
   entry: {
     a: './src/a.js',
-    b: './src/b.js',
+    // b: './src/b.js',
     // c: './src/c.js'
   },
   module: {
@@ -42,35 +42,27 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      // chunks: 'async',
       cacheGroups: {
-        vendor: {
-          chunks: 'all',
-          test: /node_modules/,
-        },
+        vendors: false,
         default: {
-          chunks: 'all',
+          // chunks: 'async',
+          minSize: 40,
           minChunks: 2,
-          // priority: -20,
-          // reuseExistingChunk: true
+          priority: -20,
+          reuseExistingChunk: true,
+          // enforce: true
         }
       }
     }
   }
-  // optimization: {
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       // default: false,
-  //       // vendors: false,
-  //       // vendor chunk
-  //       vendor: {
-  //         // sync + async chunks
-  //         chunks: 'all',
-  //         // import file path containing node_modules
-  //         test: /node_modules/,
-  //         name: 'vendor'
-  //       }
-  //     }
-  //   }
-  // }
 };
+
+
+/*
+
+1- minChunks tells SplitChunksPlugin to only inject module inside common chunk if and only if they are shared between at least 2 chunks 
+(sync or async because of all value of chunks)
+
+2- minSize tells SplitChunksPlugin to only create chunk if resulting/new chunk size in greater or equal to minSize.
+
+*/

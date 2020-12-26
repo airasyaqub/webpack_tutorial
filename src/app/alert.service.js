@@ -1,3 +1,5 @@
+import "./main.scss";
+
 import { inputsAreValid } from "./utils/inputs-are-valid";
 export class AlertService {
   constructor() {
