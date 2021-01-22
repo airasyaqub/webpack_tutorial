@@ -2,12 +2,25 @@ const path = require("path");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
+
+  // target: "node",
+
   entry: {
-    a: './src/a.js',
+    a: './src/a.ts',
     // b: './src/b.js',
   },
+
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+
   module: {
     rules: [
+      {
+        test: /\.tsx?/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.html$/,
         use: ["html-loader"]
@@ -24,6 +37,8 @@ module.exports = {
       }
     ]
   },
+
+
   optimization: {
     // minimize: false,
     runtimeChunk: {

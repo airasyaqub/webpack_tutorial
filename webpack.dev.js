@@ -6,6 +6,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = merge(common, {
   mode: "development",
   devtool: "eval-source-map",
+  // devtool: "source-map",
   devServer: {
     port: 8080
   },

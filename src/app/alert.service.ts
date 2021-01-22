@@ -1,5 +1,8 @@
 import { inputsAreValid } from "./utils/inputs-are-valid";
 export class AlertService {
+
+  errorBox: HTMLElement;
+
   constructor() {
     this.errorBox = document.getElementById("error");
   }

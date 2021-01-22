@@ -4,11 +4,13 @@ const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 
 module.exports = merge(common, {
   mode: "production",
   devtool: "hidden-source-map",
+  // devtool: "source-map",
   output: {
     filename: "[name].[contenthash].bundle.js",
     chunkFilename: '[name].[contenthash].bundle.js',
@@ -39,6 +41,8 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css"
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    // new BundleAnalyzerPlugin()
+
   ]
 });
