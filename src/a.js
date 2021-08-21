@@ -1,8 +1,9 @@
 import { run } from "./app/app";
 // import ("lodash");
-// import ("bootstrap");
+// import "bootstrap";
 // import "./main.scss";
-import ('./dependencies.js' /* webpackChunkName: 'yakki-module' */);
+import './dependencies.js';
+import './myday.js';
 import { AlertService } from "./app/alert.service";
 import { ComponentService } from "./app/component.service";
 const alertService = new AlertService();

@@ -9,7 +9,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 
 module.exports = merge(common, {
   mode: "production",
-  devtool: "hidden-source-map",
+  // devtool: "hidden-source-map",
   // devtool: "source-map",
   output: {
     filename: "[name].[contenthash].bundle.js",
@@ -22,7 +22,7 @@ module.exports = merge(common, {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, //3. Extract CSS into files
+          "style-loader", //3. Extract CSS into files
           "css-loader", //2. Turns css into commonjs
           "sass-loader" //1. Turns sass into css
         ]
@@ -38,11 +38,11 @@ module.exports = merge(common, {
       //   removeComments: true
       // }
     }),
-    new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css"
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: "[name].[contenthash].css"
+    // }),
     new CleanWebpackPlugin(),
-    // new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin()
 
   ]
 });

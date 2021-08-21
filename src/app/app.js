@@ -1,10 +1,10 @@
 import { inputsAreValid } from "./utils/inputs-are-valid";
 import { parseInputs } from "./utils/parse-inputs";
-import { AlertService } from ".././app/alert.service";
-import { ComponentService } from ".././app/component.service";
+import { AlertService } from "./alert.service";
+import { ComponentService } from "./component.service";
 
 
-export const run = (alertService: AlertService, componentService: ComponentService) => {
+export const run = (alertService, componentService) => {
   alertService.hideErrors();
 
   componentService.onClick(() => {

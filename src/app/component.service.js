@@ -1,9 +1,9 @@
 export class ComponentService {
 
-  numberOneInput: any = null;
-  numberTwoInput : any = null;
-  addValuesButton : HTMLElement = null;
-  resultDiv : HTMLElement = null;
+  // numberOneInput = null;
+  // numberTwoInput  = null;
+  // addValuesButton = null;
+  // resultDiv = null;
 
   constructor() {
     this.numberOneInput = document.getElementById("numberOne");
@@ -17,11 +17,11 @@ export class ComponentService {
     return [this.numberOneInput.value, this.numberTwoInput.value];
   }
 
-  setResult(str: string) {
+  setResult(str) {
     this.resultDiv.innerText = str;
   }
 
-  onClick(cb: any) {
+  onClick(cb) {
     this.addValuesButton.addEventListener("click", cb);
   }
 }
